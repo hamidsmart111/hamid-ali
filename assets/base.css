@@ -23,7 +23,6 @@ body {
   --surface-transition-timing: var(--ease-out-quad);
   --submenu-animation-speed: 360ms;
   --submenu-animation-easing: cubic-bezier(0.25, 0.1, 0.25, 1);
-  --mobile-collection-padding: 16.75px;
 }
 
 html {
