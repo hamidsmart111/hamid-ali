@@ -74,18 +74,7 @@
     data-placeholder="true"
   {% endif %}
 >
-  <a
-    id="{{ product_card_id | md5 }}"
-    {% unless onboarding %}
-      href="{{ variant_to_link.url }}"
-    {% endunless %}
-    class="product-card__link"
-    ref="productCardLink"
-  >
-    <span class="visually-hidden">
-      {{ product.title }}
-    </span>
-  </a>
+
   <div
     class="
       product-card__content
@@ -113,7 +102,28 @@
   >
     {{ children }}
   </div>
-  <button>test</button>
+  <button 
+  class="product-card__modal-trigger" 
+  data-product-id="{{ product.id }}"
+>
+  Quick View
+</button>
+<div 
+  id="quick-view-{{ product.id }}" 
+  class="quick-view-modal"
+>
+  <div class="quick-view-modal__overlay"></div>
+  <div class="quick-view-modal__content">
+    
+    <button class="quick-view-modal__close">
+      ✕
+    </button>
+
+    {% render 'product-information-content', product: product %}
+
+  </div>
+</div>
+
 </product-card>
 {%- if settings.transition_to_main_product -%}
   </product-card-link>

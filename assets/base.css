@@ -4965,3 +4965,36 @@ product-recommendations:has([data-has-recommendations='false']) {
     translate: 0px var(--atc-destination, 0px);
   }
 }
+
+.quick-view-modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 9999;
+}
+
+.quick-view-modal.active {
+  display: block;
+}
+
+.quick-view-modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+}
+
+.quick-view-modal__content {
+  position: relative;
+  background: white;
+  max-width: 800px;
+  margin: 5% auto;
+  padding: 30px;
+  z-index: 2;
+}
+
+.quick-view-modal__close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
